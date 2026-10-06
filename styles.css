@@ -140,15 +140,16 @@ h1 em, h2 em { color: var(--mint); font-family: var(--serif); font-weight: 400; 
 .delivery { background: #f1f4ef; }
 .delivery-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: 10%; align-items: center; }
 .delivery-photo { min-height: 465px; }
-.delivery-photo-track { position: absolute; inset: 0 auto 0 0; display: flex; width: 600%; animation: delivery-photo-slide 26s ease-in-out infinite; }
-.delivery-photo-track img { display: block; width: calc(100% / 6); height: 100%; flex: 0 0 calc(100% / 6); object-fit: cover; object-position: center; }
+.delivery-photo-track { position: absolute; inset: 0 auto 0 0; display: flex; width: 700%; animation: delivery-photo-slide 30s ease-in-out infinite; }
+.delivery-photo-track img { display: block; width: calc(100% / 7); height: 100%; flex: 0 0 calc(100% / 7); object-fit: cover; object-position: center; }
 @keyframes delivery-photo-slide {
-  0%, 14% { transform: translateX(0); }
-  17%, 31% { transform: translateX(-16.6667%); }
-  34%, 48% { transform: translateX(-33.3333%); }
-  51%, 65% { transform: translateX(-50%); }
-  68%, 82% { transform: translateX(-66.6667%); }
-  85%, 100% { transform: translateX(-83.3333%); }
+  0%, 12% { transform: translateX(0); }
+  15%, 27% { transform: translateX(-14.2857%); }
+  30%, 42% { transform: translateX(-28.5714%); }
+  45%, 57% { transform: translateX(-42.8571%); }
+  60%, 72% { transform: translateX(-57.1429%); }
+  75%, 87% { transform: translateX(-71.4286%); }
+  90%, 100% { transform: translateX(-85.7143%); }
 }
 .delivery-photo::before { position: absolute; top: 14%; right: 11%; width: 60%; height: 57%; border: 1px solid rgba(255,255,255,.28); content: ""; }
 .delivery-photo::after { position: absolute; right: 0; bottom: 0; width: 68%; height: 38%; background: linear-gradient(135deg,rgba(16,43,53,.15),rgba(16,43,53,.55)); content: ""; }
