@@ -29,3 +29,35 @@ if (clientsMarquee && clientsToggle) {
     clientsToggle.textContent = isPaused ? "Resume logo scroll" : "Pause logo scroll";
   });
 }
+
+const contactForm = document.querySelector("#contact-form");
+const contactFormFeedback = document.querySelector("#contact-form-feedback");
+const contactFormFallback = document.querySelector("#contact-form-fallback");
+
+if (contactForm && contactFormFeedback && contactFormFallback) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) return;
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name")).trim();
+    const email = String(formData.get("email")).trim();
+    const topic = String(formData.get("topic")).trim();
+    const message = String(formData.get("message")).trim();
+    const subject = `Website enquiry: ${topic}`;
+    const body = [
+      `Full Name: ${name}`,
+      `Email Address: ${email}`,
+      `Enquiry Type: ${topic}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+    const mailto = `mailto:info@proceltechservices.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    contactFormFallback.href = mailto;
+    contactFormFeedback.textContent = "Your email app should open with the message ready. Select Send there to deliver it.";
+    window.location.href = mailto;
+  });
+}
